@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
-import { elastic as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 
-  class Dropdown extends React.Component{
-    showSettings(event) {
-      event.preventDefault();
-    }
-    render() {
-      return(
-        <div classname="App-dropdown">
-          <Menu>
-            <a id="home" className="menu-item" href="/">Home</a>
-            <a id="about" className="menu-item" href="/about">About</a>
-            <a id="contact" className="menu-item" href="/contact">Contact</a>
-            <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-          </Menu>
-          </div>
-      );
-    }
+export default props => {
+  return (
+    // Pass on our props
+    <Menu {...props}>
+      <a className="menu-item" href="/">
+        Home
+      </a>
 
-  }
-  export default Dropdown;
+      <a className="menu-item" href="/burgers">
+        Burgers
+      </a>
+
+      <a className="menu-item" href="/pizzas">
+        Pizzas
+      </a>
+
+      <a className="menu-item" href="/desserts">
+        Desserts
+      </a>
+    </Menu>
+  );
+};

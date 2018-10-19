@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import Login from './Admin/Components/Login';
+import Dropdown from './Admin/Components/Dropdown';
 export default function Home(){
     return (
       <div className="App">
@@ -8,9 +9,13 @@ export default function Home(){
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome</h1>
         </header>
-        <div>
+        <Dropdown pageWrapId={"page-wrap"} outerContainerId={"App"} />
+		<div>
         <p className="App-intro">
-        <Login/>
+        
+		 <Login/>
+		
+		
         </p>
         </div>
       </div>

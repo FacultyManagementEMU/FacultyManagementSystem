@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
   class Login extends React.Component{
     getPHP(){
       fetch('http://mortondevsite.com/eval/api/v1/users')
@@ -11,19 +12,21 @@ import React, { Component } from 'react';
       return(
         <div classname="App-login">
           <button onClick={this.getPHP}>Test</button>
+		   <form>
+		  <label>User Name:</label>
+		  <br/>
+		  <input type="text" data-test="username" />
+		  <br/>
+		  <label>Password:</label>
+		  <br/>
+		  <input type="password" data-test="password" />
+		  <br/>
+		  </form>
         </div>
       );
     }
 
   }
 
-  // <form>
-  // <label>User Name:</label>
-  // <br/>
-  // <input type="text" data-test="username" />
-  // <br/>
-  // <label>Password:</label>
-  // <br/>
-  // <input type="password" data-test="password" />
-  // <br/>
+
   export default Login;
