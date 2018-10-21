@@ -10,20 +10,18 @@ import React, { Component } from 'react';
     render() {
       return(
         <div classname="App-login">
-          <button onClick={this.getPHP}>Test</button>
+        <form>
+        <input type="text" data-test="username" placeholder="Enter your Email..." />
+        <br/>
+        <input type="password" data-test="password" placeholder="Enter your Password..."/>
+        <br/>
+        <br/>
+        <button onClick={this.getPHP}>Login</button>
+        </form>
         </div>
       );
     }
 
   }
 
-  // <form>
-  // <label>User Name:</label>
-  // <br/>
-  // <input type="text" data-test="username" />
-  // <br/>
-  // <label>Password:</label>
-  // <br/>
-  // <input type="password" data-test="password" />
-  // <br/>
   export default Login;

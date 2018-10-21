@@ -1,18 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
-import Login from './Admin/Components/Login';
+import Login from './Components/Login';
+import Dropdown from'./Components/Dropdown';
+
 export default function Home(){
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome</h1>
+          <Dropdown />
         </header>
-        <div>
         <p className="App-intro">
-        <Login/>
         </p>
-        </div>
+        <Login/>
       </div>
     );
 
