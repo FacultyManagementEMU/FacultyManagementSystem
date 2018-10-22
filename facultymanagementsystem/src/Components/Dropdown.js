@@ -34,7 +34,7 @@ showDropdownMenu(event) {
     return (
         <div  className="nav-menu" >
         <div className="button" onClick={this.showDropdownMenu} style = {{background:"#222",width:"50px"}}>
-        <img src={hamburger} className="Hamburger-menu-image" alt="Hamburger Menu" style = {{background:"#222",width:"45px"}} />
+        <img src={hamburger} className="Hamburger-menu-image" alt="Hamburger Menu" style = {{background:"#222",width:"32px", height:"32px"}} />
         </div>
 
           { this.state.displayMenu ? (
