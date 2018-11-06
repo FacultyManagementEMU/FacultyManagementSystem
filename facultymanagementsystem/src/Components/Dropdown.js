@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import hamburger from '../hamburger.png';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 
 class Dropdown extends React.Component {
@@ -39,14 +40,14 @@ showDropdownMenu(event) {
 
           { this.state.displayMenu ? (
           <ul className="nav-ul" >
-         <li className="nav-li" ><a className="nav-a" href="#Home">Home</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#Teaching">Teaching</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#Research">Research</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#PeerReviews">Peer Reviews</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#Services">Services</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#GenerateReport">Generate Report</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#Settings">Settings</a></li>
-         <li className="nav-li" ><a className="nav-a" href="#LogOut">Log Out</a></li>
+         <li className="nav-li" ><Link className="nav-a" to="/">Home</Link></li>
+         <li className="nav-li" ><a className="nav-a" href="Teaching">Teaching</a></li>
+         <li className="nav-li" ><a className="nav-a" href="Research">Research</a></li>
+         <li className="nav-li" ><a className="nav-a" href="Reviews">Reviews</a></li>
+         <li className="nav-li" ><a className="nav-a" href="Services">Services</a></li>
+         <li className="nav-li" ><a className="nav-a" href="GenerateReport">Generate Report</a></li>
+         <li className="nav-li" ><a className="nav-a" href="Settings">Settings</a></li>
+         <li className="nav-li" ><a className="nav-a" href="LogOut">Log Out</a></li>
           </ul>
         ):
         (

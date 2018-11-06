@@ -2,8 +2,19 @@ import React from 'react';
 import logo from './logo.svg';
 import Login from './Components/Login';
 import Dropdown from'./Components/Dropdown';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-export default function Home(){
+class Home extends React.Component{
+  constructor(props) {
+     super(props);
+     this.state = {
+       isLoggedin: false,
+       items: [],
+     };
+     Home.ctx = this;
+    }
+
+  render(){
     return (
       <div className="App">
         <header className="App-header">
@@ -12,8 +23,10 @@ export default function Home(){
         </header>
         <p className="App-intro">
         </p>
-        <Login/>
+        <Login {...this.state} />
       </div>
     );
-
   }
+}
+
+export default Home;

@@ -14,6 +14,39 @@
   color: white;
 }
 
+.App-summary {
+  height: 150px;
+  padding: 0px;
+}
+
+.Research-summary {
+  height: 150px;
+  width: 30%;
+  padding: 20px;
+  display: inline-block;
+}
+
+.Service-summary {
+  height: 150px;
+  width: 30%;
+  padding: 20px;
+  display: inline-block;
+}
+
+.Reviews-summary {
+  height: 150px;
+  width: 30%;
+  padding: 20px;
+  display: inline-block;
+}
+
+.Teaching-summary {
+  height: 150px;
+  width: 30%;
+  padding: 20px;
+  display: inline-block;
+}
+
 .App-header2 {
   background-color: #222;
   height: 80px;

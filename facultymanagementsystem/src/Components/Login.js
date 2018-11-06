@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Summary from './Summary.js';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Login extends React.Component{
   constructor(props) {
      super(props);
      this.state = {
-       isLoggedin: false,
-       items: [],
+       isLoggedin: props.isLoggedin,
+       items: props.items,
      };
      Login.ctx = this;
     }
@@ -31,7 +32,7 @@ class Login extends React.Component{
 
     render() {
       return this.state.isLoggedin ? (
-        <Summary {...this.state} />
+        <Route path="/" render={() => <Summary {...this.state} />} />
       ) : (
         <div className="App-login">
         <form>
@@ -40,8 +41,9 @@ class Login extends React.Component{
         <input type="password" data-test="password" placeholder="Enter your Password..."/>
         <br/>
         <br/>
-        <button onClick={this.getPHP}>Login</button>
+
         </form>
+        <button onClick={this.getPHP}>Login</button>
         </div>
       );
     }
