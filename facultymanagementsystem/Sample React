@@ -1,0 +1,57 @@
+import React, { Component } from 'react';
+
+  //change summary to your page
+  class Summary extends React.Component{
+
+    state = {
+     isLoading: true,
+     items: [],
+     error: null,
+    };
+
+   getPHP(){ //change the 'users' to match your page call
+     fetch(`http://mortondevsite.com/eval/api/v1/users/1`)
+     .then(response => response.json())
+     .then(data =>
+       this.setState({
+         items: data,
+         isLoading: false,
+       })
+     )
+     .catch(error => this.setState({ error, isLoading: false }));
+   }
+   componentDidMount() {
+     this.getPHP();
+   }
+   render() {
+     //You can see the fetched data and column names in the console
+     console.log(this.state.items)
+     const { isLoading, items, error } = this.state;
+     return (
+       <React.Fragment>
+         <h1>Welcome</h1>
+         {error ? <p>{error.message}</p> : null}
+         {!isLoading ? (
+           items.map(item => {
+             //change the const items to match the column names from the JSON
+             const { user_name, userID, user_email } = item;
+             return (
+               //use this space to create your page
+               <div key={user_name}>
+                 <p>Name: {user_name}</p>
+                 <p>Email Address: {user_email}</p>
+                 <hr />
+               </div>
+             );
+           })
+         ) : (
+           //this displays while the fetch is still getting data.
+           <h3>Loading...</h3>
+         )}
+       </React.Fragment>
+     );
+   }
+}
+
+//change Summary to match the name after Class at the top of the page.
+export default Summary;
