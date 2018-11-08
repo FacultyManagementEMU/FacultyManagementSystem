@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
     constructor(props){
       super(props);
       this.state = {
+         displayMenu: props.displayMenu,
         isLoggedin: props.isLoggedin,
         items: props.items,
       };
@@ -15,7 +16,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
      return(
        <div className="App-summary">
        <h2>Welcome {this.state.items[0].user_name}! </h2>
-       
+
        <div className="Research-summary" >
           <p>Research:</p>
       </div>
